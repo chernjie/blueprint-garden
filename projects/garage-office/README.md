@@ -7,6 +7,14 @@ Compact 9'×6' garage inset converted into a focus nook with a pocket door, full
 ![Top-down plan](renders/garage_office_top_down.png)
 ![Desk wall elevation](renders/garage_office_front_elevation.png)
 
+## Regenerating Diagrams
+
+Layout dimensions live in `layout.yaml`. Update the values there (widths, heights, offsets) and re-render with:
+
+```bash
+python3 projects/garage-office/garage-office.py --config projects/garage-office/layout.yaml --no-show --output-dir projects/garage-office/renders
+```
+
 ## Space Overview
 
 - Interior clear area is **108" wide × 72" deep × 108" high**, giving just enough room for a 6.5' desk plus circulation.

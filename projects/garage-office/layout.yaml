@@ -1,0 +1,46 @@
+{
+  "stud": {
+    "depth": 1.5,
+    "width": 3.5
+  },
+  "eye_height": 60,
+  "room": {
+    "width": 108,
+    "depth": 72,
+    "height": 108
+  },
+  "wall": {
+    "thickness": 4.25
+  },
+  "pocket_door": {
+    "clear_width": 30,
+    "clear_height": 80,
+    "offset_from_right": 1.5
+  },
+  "window": {
+    "width": 60,
+    "height": 48,
+    "sill_aff": 36
+  },
+  "desk": {
+    "width": 78,
+    "depth": 30,
+    "height": 30
+  },
+  "hvac": {
+    "width": 20,
+    "height": 14,
+    "proj_office": 8,
+    "proj_garage": 14
+  },
+  "bookshelf": {
+    "width": 36,
+    "depth": 12,
+    "height": 108
+  },
+  "platform": {
+    "width": 24,
+    "depth": 72,
+    "height_aff": 76
+  }
+}
