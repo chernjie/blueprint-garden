@@ -30,6 +30,20 @@ A living index of every section in the garden with positions, sun, soil, plant l
 
 ---
 
+## Section Map
+
+Render a quick overhead map of the coordinates above:
+
+```bash
+python3 projects/gardens/map_sections.py            # interactive window + PNG
+python3 projects/gardens/map_sections.py --no-show  # export only (default: garden_map.png)
+```
+
+The script approximates diagonal runs (e.g., Orchard Section) so update `SECTION_DATA`
+inside `map_sections.py` if you add or refine coordinates.
+
+---
+
 ## Sections — Details & Prompts
 
 ### Driveway Trench
