@@ -40,7 +40,8 @@ python3 projects/gardens/map_sections.py --no-show  # export only (default: gard
 ```
 
 The script approximates diagonal runs (e.g., Orchard Section) so update `SECTION_DATA`
-inside `map_sections.py` if you add or refine coordinates.
+inside `sections.yaml` if you add or refine coordinates or plant placements. Each entry
+can list multiple `plants` with `position: [x,y]` pairs to drop pins on the map.
 
 ---
 

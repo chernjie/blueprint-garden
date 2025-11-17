@@ -14,63 +14,14 @@ import argparse
 from pathlib import Path
 from typing import Iterable, List, Sequence, Tuple
 
+import json
 import matplotlib
 
+try:
+    import yaml  # type: ignore
+except ImportError:  # pragma: no cover
+    yaml = None
 
-# Coordinates are in feet using the README coordinate system
-SECTION_DATA: List[dict] = [
-    {
-        "name": "Driveway Trench",
-        "kind": "rect",
-        "coords": (0, 0, 1, 20),
-        "color": "#f4d35e",
-        "note": "Kurrajong → Mallow run",
-        "label_offset": (-1.5, 0),
-    },
-    {
-        "name": "Drybed12",
-        "kind": "rect",
-        "coords": (-10, 70, -7, 58),
-        "color": "#ee964b",
-        "note": "Wicking retention bed",
-    },
-    {
-        "name": "Sunny Front Left",
-        "kind": "rect",
-        "coords": (0, 25, -10, 28),
-        "color": "#9ad1d4",
-        "note": "Front entry showcase",
-    },
-    {
-        "name": "North8",
-        "kind": "rect",
-        "coords": (0, 25, 35, 50),
-        "color": "#c5e1a5",
-        "note": "Long edible strip",
-    },
-    {
-        "name": "Herbal Strip + Compost",
-        "kind": "rect",
-        "coords": (-7, 70, 0, 60),
-        "color": "#c3aed6",
-        "note": "Culinary/medicinals",
-    },
-    {
-        "name": "Orchard Section",
-        "kind": "poly",
-        # Approximate diagonal to show banana→pomegranate run
-        "points": [(0, 60), (3, 58), (5, 54), (7, 50), (7, 55), (2, 60)],
-        "color": "#80cbc4",
-        "note": "Heat-wall fruits",
-    },
-    {
-        "name": "Patio Planters",
-        "kind": "rect",
-        "coords": (10, 40, 12, 44),
-        "color": "#ffccbc",
-        "note": "Stacked towers",
-    },
-]
 
 plt = None  # populated in configure_matplotlib
 Polygon = None
@@ -146,6 +97,37 @@ def _draw_section(ax, section: dict) -> None:
     )
 
 
+def _draw_plants(ax, plants: Sequence[dict]) -> None:
+    if not plants:
+        return
+    for plant in plants:
+        x, y = plant["position"]
+        ax.scatter(
+            x,
+            y,
+            s=25,
+            c="#2d3142",
+            marker="o",
+            edgecolors="white",
+            linewidths=0.5,
+            zorder=5,
+        )
+        dx, dy = plant.get("label_offset", (0.4, 0.4))
+        label = plant["name"]
+        if plant.get("note"):
+            label += f"\n{plant['note']}"
+        ax.text(
+            x + dx,
+            y + dy,
+            label,
+            fontsize=7,
+            ha="left",
+            va="bottom",
+            color="#1b1b1b",
+            zorder=6,
+        )
+
+
 def _compute_bounds(sections: Sequence[dict]) -> Tuple[float, float, float, float]:
     xs: List[float] = []
     ys: List[float] = []
@@ -162,14 +144,15 @@ def _compute_bounds(sections: Sequence[dict]) -> Tuple[float, float, float, floa
     )
 
 
-def build_map(output: Path, show_plot: bool) -> None:
+def build_map(sections: Sequence[dict], output: Path, show_plot: bool) -> None:
     global plt
     assert plt is not None
     fig, ax = plt.subplots(figsize=(9, 10))
-    for section in SECTION_DATA:
+    for section in sections:
         _draw_section(ax, section)
+        _draw_plants(ax, section.get("plants", []))
 
-    xmin, xmax, ymin, ymax = _compute_bounds(SECTION_DATA)
+    xmin, xmax, ymin, ymax = _compute_bounds(sections)
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ymin, ymax)
     ax.set_xlabel("x (ft east)")
@@ -204,6 +187,12 @@ def parse_args() -> argparse.Namespace:
         "--backend",
         help="Matplotlib backend to use (defaults to Agg when --no-show is supplied).",
     )
+    parser.add_argument(
+        "--data-file",
+        type=Path,
+        default=Path(__file__).with_name("sections.yaml"),
+        help="YAML file describing sections and plants (default: %(default)s)",
+    )
     return parser.parse_args()
 
 
@@ -220,10 +209,24 @@ def configure_matplotlib(backend: str | None, headless: bool) -> None:
     Rectangle = _Rectangle
 
 
+def load_sections(path: Path) -> List[dict]:
+    text = path.read_text(encoding="utf-8")
+    data: dict
+    if yaml is not None:
+        data = yaml.safe_load(text) or {}
+    else:
+        data = json.loads(text)
+    sections = data.get("sections")
+    if not sections:
+        raise SystemExit(f"No sections defined in {path}")
+    return sections
+
+
 def main() -> None:
     args = parse_args()
+    sections = load_sections(args.data_file)
     configure_matplotlib(args.backend, args.no_show)
-    build_map(args.output, show_plot=not args.no_show)
+    build_map(sections, args.output, show_plot=not args.no_show)
 
 
 if __name__ == "__main__":
