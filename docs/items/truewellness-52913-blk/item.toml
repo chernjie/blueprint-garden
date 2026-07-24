@@ -1,0 +1,22 @@
+schema_version = 1
+name = "All Mesh Office Chair"
+brand = "TrueWellness"
+manufacturer = "True Innovations"
+model = "52913-BLK"
+item_numbers = ["1812395"]
+product_url = "https://www.costco.com/p/-/truewellness-all-mesh-office-chair/4000366330"
+support_url = "https://trueinnovations.com/support/"
+
+[[documents]]
+title = "Mesh Chair Use and Care Instructions"
+type = "use-and-care-instructions"
+file = "documents/truewellness-52913-blk-use-and-care-instructions-en-fr-es.pdf"
+languages = ["en", "fr", "es"]
+source_url = "https://content.syndigo.com/asset/94867f05-dc7b-4f08-9dc5-4559bacde530/original.pdf?syndi_download=1&syndi_filename=Downloadable_Assembly_Instructions.pdf"
+source_page_url = "https://www.costco.com/p/-/truewellness-all-mesh-office-chair/4000366330"
+source_filename = "Downloadable_Assembly_Instructions.pdf"
+source_type = "retailer"
+retrieved = 2026-07-23
+sha256 = "c17f359a4d13d0aa30173721e71105b1300622888f49b0e23646f9d23810d496"
+bytes = 3665650
+pages = 24
