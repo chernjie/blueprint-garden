@@ -1,0 +1,17 @@
+# Incomplete archive entry.
+# Public PDF documents and their verified provenance metadata still need to be added.
+# This entry will not pass archive-product-documents validation until at least one
+# document is downloaded, verified, recorded below, and linked from README.md.
+
+schema_version = 1
+name = "Professional Prestige ProTerra Hybrid Electric Heat Pump Water Heater, 40 Gallon"
+brand = "Rheem"
+manufacturer = "Rheem Manufacturing Company"
+model = "PROPH40T2 RH375-30"
+
+# Model identity should be checked against the appliance rating plate and each
+# archived document. Rheem currently publishes a closely named RH375-SO variant;
+# do not treat it as equivalent without evidence inside the source document.
+
+# Add product_url and support_url after exact-model verification.
+# Add one or more [[documents]] records after verified PDFs are archived.
