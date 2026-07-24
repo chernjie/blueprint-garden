@@ -1,0 +1,4 @@
+interface:
+  display_name: "Archive Product Documents"
+  short_description: "Find and archive public product PDF manuals"
+  default_prompt: "Use $archive-product-documents to find and archive public PDF manuals for a product."

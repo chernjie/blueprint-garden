@@ -10,6 +10,7 @@
 - Architecture & system-engineering notes  
 - Renovation plans and decision-rationale  
 - Gardening layouts, landscape systems and soil/irrigation experiments  
+- Public product manuals and care documentation
 - Brainstorm sessions, prototypes and lessons learned  
 
 This repository isn’t a static collection—it’s a workspace where ideas grow, iterate and connect.
@@ -50,7 +51,8 @@ blueprint-garden/
 │ ├── decision-records/
 │ ├── tradeoff-analyses/
 │ ├── materials/
-│ └── manuals/
+│ ├── manuals/
+│ └── items/
 ├── ideas/
 │ ├── brainstorms/
 │ └── sketches/
