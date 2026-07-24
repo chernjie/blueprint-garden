@@ -1,9 +1,3 @@
-# Archive entry pending final PDF normalization and validation.
-# Four manufacturer PDFs have been uploaded from the Rheem product page.
-# Product identity and document applicability were verified by the repository owner.
-# SHA-256 digests are recorded below. Byte counts, page counts, exact source asset
-# URLs, normalized document paths, and validator results remain outstanding.
-
 schema_version = 1
 name = "Professional Prestige ProTerra Hybrid Electric Heat Pump Water Heater, 40 Gallon"
 brand = "Rheem"
@@ -12,21 +6,53 @@ model = "PROPH40T2 RH375-30"
 product_url = "https://www.rheem.com/product/rheem-professional-prestige-proterra-hybrid-electric-heat-pump-with-leakguard-proph40-t2-rh375-so/"
 
 # Rheem publishes the source page as model PROPH40 T2 RH375-SO. The appliance
-# rating plate was previously recorded as PROPH40T2 RH375-30. The repository owner
-# verified that the archived PDFs apply to the installed product.
+# rating plate was recorded as PROPH40T2 RH375-30. The archived PDFs were
+# manually verified by the repository owner as applicable to this unit.
 
-# Uploaded source files awaiting normalization into documents/:
-# brochure-B0A15708-1C72-497D-A084-924E9908A80E.pdf
-# sha256 = "ac5948a2efc6b722b27adea4d75c6befef540308f5b25ee5b466087ad6a8dca7"
-#
-# duct-diverter-AD1C71F6-6D79-48F4-84D5-E62CECA91DBA.pdf
-# sha256 = "dcaf4db51f1ebb038547a151021deda2489228dc112aa3d19fb5edbe9b720e31"
-#
-# specification-sheet-C63F37A2-82B4-4AAB-B9B8-4C064F869DC7.pdf
-# sha256 = "6eeee4226972fc092eef965d824c1f0f0758dfd17f88f6220f628b73c5b783d1"
-#
-# use-care-manual-1A387E80-1A29-410A-8410-5378A1C9B57E.pdf
-# sha256 = "028ecdaebfba2ef5f84ab469ac9d3af3136cdb572d9c993601eab5f1553d31ed"
-#
-# Add final [[documents]] records after normalized paths, direct source asset URLs,
-# byte sizes, page counts, titles, and languages are known.
+[[documents]]
+title = "Professional Prestige ProTerra Hybrid Electric Heat Pump with LeakGuard Brochure"
+type = "brochure"
+file = "brochure-B0A15708-1C72-497D-A084-924E9908A80E.pdf"
+languages = ["en"]
+source_url = "https://www.rheem.com/product/rheem-professional-prestige-proterra-hybrid-electric-heat-pump-with-leakguard-proph40-t2-rh375-so/related-documents/186492/"
+source_page_url = "https://www.rheem.com/product/rheem-professional-prestige-proterra-hybrid-electric-heat-pump-with-leakguard-proph40-t2-rh375-so/"
+source_filename = "brochure-B0A15708-1C72-497D-A084-924E9908A80E.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-24
+sha256 = "ac5948a2efc6b722b27adea4d75c6befef540308f5b25ee5b466087ad6a8dca7"
+
+[[documents]]
+title = "HPWH Duct Diverter"
+type = "installation-instructions"
+file = "duct-diverter-AD1C71F6-6D79-48F4-84D5-E62CECA91DBA.pdf"
+languages = ["en"]
+source_url = "https://www.rheem.com/product/rheem-professional-prestige-proterra-hybrid-electric-heat-pump-with-leakguard-proph40-t2-rh375-so/related-documents/186493/"
+source_page_url = "https://www.rheem.com/product/rheem-professional-prestige-proterra-hybrid-electric-heat-pump-with-leakguard-proph40-t2-rh375-so/"
+source_filename = "duct-diverter-AD1C71F6-6D79-48F4-84D5-E62CECA91DBA.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-24
+sha256 = "dcaf4db51f1ebb038547a151021deda2489228dc112aa3d19fb5edbe9b720e31"
+
+[[documents]]
+title = "Professional Prestige ProTerra Hybrid Electric Heat Pump with LeakGuard Specification Sheet"
+type = "specification-sheet"
+file = "specification-sheet-C63F37A2-82B4-4AAB-B9B8-4C064F869DC7.pdf"
+languages = ["en"]
+source_url = "https://www.rheem.com/product/rheem-professional-prestige-proterra-hybrid-electric-heat-pump-with-leakguard-proph40-t2-rh375-so/related-documents/186490/"
+source_page_url = "https://www.rheem.com/product/rheem-professional-prestige-proterra-hybrid-electric-heat-pump-with-leakguard-proph40-t2-rh375-so/"
+source_filename = "specification-sheet-C63F37A2-82B4-4AAB-B9B8-4C064F869DC7.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-24
+sha256 = "6eeee4226972fc092eef965d824c1f0f0758dfd17f88f6220f628b73c5b783d1"
+
+[[documents]]
+title = "Professional Prestige ProTerra Hybrid Electric Heat Pump Water Heater Use and Care Manual"
+type = "use-and-care-instructions"
+file = "use-care-manual-1A387E80-1A29-410A-8410-5378A1C9B57E.pdf"
+languages = ["en"]
+source_url = "https://www.rheem.com/product/rheem-professional-prestige-proterra-hybrid-electric-heat-pump-with-leakguard-proph40-t2-rh375-so/related-documents/186491/"
+source_page_url = "https://www.rheem.com/product/rheem-professional-prestige-proterra-hybrid-electric-heat-pump-with-leakguard-proph40-t2-rh375-so/"
+source_filename = "use-care-manual-1A387E80-1A29-410A-8410-5378A1C9B57E.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-24
+sha256 = "028ecdaebfba2ef5f84ab469ac9d3af3136cdb572d9c993601eab5f1553d31ed"
