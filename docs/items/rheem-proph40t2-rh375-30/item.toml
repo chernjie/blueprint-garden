@@ -1,17 +1,24 @@
-# Incomplete archive entry.
-# Public PDF documents and their verified provenance metadata still need to be added.
-# This entry will not pass archive-product-documents validation until at least one
-# document is downloaded, verified, recorded below, and linked from README.md.
+# Archive entry pending final PDF normalization and validation.
+# Four manufacturer PDFs have been uploaded from the Rheem product page.
+# Their final document records still require normalized paths, SHA-256 digests,
+# byte counts, page counts, and exact-model verification from the PDFs.
 
 schema_version = 1
 name = "Professional Prestige ProTerra Hybrid Electric Heat Pump Water Heater, 40 Gallon"
 brand = "Rheem"
 manufacturer = "Rheem Manufacturing Company"
 model = "PROPH40T2 RH375-30"
+product_url = "https://www.rheem.com/product/rheem-professional-prestige-proterra-hybrid-electric-heat-pump-with-leakguard-proph40-t2-rh375-so/"
 
-# Model identity should be checked against the appliance rating plate and each
-# archived document. Rheem currently publishes a closely named RH375-SO variant;
-# do not treat it as equivalent without evidence inside the source document.
+# Rheem publishes the source page as model PROPH40 T2 RH375-SO. The appliance
+# rating plate was previously recorded as PROPH40T2 RH375-30. Preserve this
+# distinction until the PDFs and rating plate establish how these suffixes relate.
 
-# Add product_url and support_url after exact-model verification.
-# Add one or more [[documents]] records after verified PDFs are archived.
+# Uploaded source files awaiting normalization into documents/:
+# - brochure-B0A15708-1C72-497D-A084-924E9908A80E.pdf
+# - duct-diverter-AD1C71F6-6D79-48F4-84D5-E62CECA91DBA.pdf
+# - specification-sheet-C63F37A2-82B4-4AAB-B9B8-4C064F869DC7.pdf
+# - use-care-manual-1A387E80-1A29-410A-8410-5378A1C9B57E.pdf
+#
+# Add [[documents]] records only after each PDF has been inspected and its
+# provenance, languages, exact title, SHA-256, byte size, and page count are known.
