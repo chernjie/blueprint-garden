@@ -1,0 +1,34 @@
+schema_version = 1
+name = "30-inch Electric Single Built-In Wall Oven"
+brand = "Whirlpool"
+model = "RBS305PDQ4"
+product_url = "https://www.whirlpool.com/owners-center-pdp.RBS305PDQ.html"
+support_url = "https://homedelivery.whirlpoolcorp.com/services/manuals.html"
+
+[[documents]]
+title = "Built-In Electric Oven Use & Care Guide"
+type = "use-and-care-instructions"
+file = "documents/whirlpool-rbs305pdq4-use-and-care-instructions-revb-en.pdf"
+languages = ["en"]
+source_url = "https://www.whirlpool.com/content/dam/global/documents/200210/owners-manual-8300772-RevB.pdf"
+source_filename = "owners-manual-8300772-RevB.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-24
+revision = "revb"
+sha256 = "f7d61a12251c03e7177967e6e887c89c6e174ac548a9df338c69716742028065"
+bytes = 381700
+pages = 16
+
+[[documents]]
+title = "30-inch Electric Built-in Single and Double Ovens Dimension Guide"
+type = "dimension-guide"
+file = "documents/whirlpool-rbs305pdq4-dimension-guide-8300654-en.pdf"
+languages = ["en"]
+source_url = "https://www.whirlpool.com/content/dam/global/documents/200302/dimension-guide-8300654-D-WH.pdf"
+source_filename = "dimension-guide-8300654-D-WH.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-24
+revision = "8300654"
+sha256 = "2c6dc27f5832b93f011a0623e4a11d0a64be5f085dacfb1cd4713f9d58c32510"
+bytes = 34889
+pages = 1

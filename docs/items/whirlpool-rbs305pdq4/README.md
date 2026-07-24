@@ -22,45 +22,30 @@ The appliance serial number and household-specific installation details are inte
 
 ## Known control component
 
-The model-specific WhirlpoolParts catalog identifies the electronic control board as Whirlpool OEM part `4448874` and reports it as no longer available. This is useful maintenance evidence, but any substitute or rebuilt board still requires fitment verification against the exact oven model.
+The model-specific WhirlpoolParts catalog identifies the electronic control board as Whirlpool OEM part `4448874` and reports it as no longer available. Any substitute or rebuilt board still requires fitment verification against the exact oven model.
 
-## Verified public documents
+## Archived documents
 
-### Use & Care Guide
+### Built-In Electric Oven Use & Care Guide
 
-- Title: **Built-In Electric Oven Use & Care Guide**
-- Whirlpool document number: `8300772B`
-- Models listed in the document include `RBS305`
+- [Local PDF](documents/whirlpool-rbs305pdq4-use-and-care-instructions-revb-en.pdf)
+- [Whirlpool source](https://www.whirlpool.com/content/dam/global/documents/200210/owners-manual-8300772-RevB.pdf)
+- Whirlpool document: `8300772B`
+- Revision: `RevB`
+- Models listed include `RBS305`
+- Language: English
 - Pages: 16
-- Languages: English
-- Source: [Whirlpool PDF](https://www.whirlpool.com/content/dam/global/documents/200210/owners-manual-8300772-RevB.pdf)
 
-This is a model-family manual rather than a suffix-specific document, but it explicitly lists `RBS305`, making it applicable to model `RBS305PDQ4` unless a suffix-specific revision states otherwise.
+This is a model-family manual rather than a suffix-specific document, but it explicitly lists `RBS305`, making it applicable to `RBS305PDQ4` unless a suffix-specific revision states otherwise.
 
-### Dimension Guide
+### 30-inch Electric Built-in Single and Double Ovens Dimension Guide
 
-- Title: **30-inch Electric Built-in Single and Double Ovens Dimension Guide**
+- [Local PDF](documents/whirlpool-rbs305pdq4-dimension-guide-8300654-en.pdf)
+- [Whirlpool source](https://www.whirlpool.com/content/dam/global/documents/200302/dimension-guide-8300654-D-WH.pdf)
 - Whirlpool reference: `8300654`
 - Revision date printed in document: `2003-02-26`
-- Product series listed in the document include `RBS305PD`
+- Product series listed include `RBS305PD`
+- Language: English
 - Pages: 1
-- Languages: English
-- Source: [Whirlpool PDF](https://www.whirlpool.com/content/dam/global/documents/200302/dimension-guide-8300654-D-WH.pdf)
 
-The dimension guide states that these ovens require a three-wire or four-wire, single-phase, 240-volt, 60 Hz AC supply. Models rated at 7.2 kW or below at 240 V use a separate 30 A circuit; higher-rated models in the guide use a 40 A circuit. Confirm the exact appliance nameplate rating before sizing or modifying a circuit.
-
-## Archive status
-
-Both documents are verified as public Whirlpool-authored PDFs and are linked above. Their binary files have not yet been mirrored into `documents/`, because the current repository connector cannot ingest the PDF bytes from external URLs. Consequently, `item.toml` is intentionally deferred: the archive validator requires local PDFs plus exact byte counts and SHA-256 hashes.
-
-Normalized target filenames for a future binary import:
-
-- `documents/whirlpool-rbs305pdq4-use-and-care-instructions-revb-en.pdf`
-- `documents/whirlpool-rbs305pdq4-dimension-guide-8300654-en.pdf`
-
-Once the files are downloaded into those paths, generate their hashes and byte counts, add `item.toml`, and run:
-
-```bash
-python3 .agents/skills/archive-product-documents/scripts/validate_entry.py \
-  docs/items/whirlpool-rbs305pdq4
-```
+The guide states that these ovens require a three-wire or four-wire, single-phase, 240-volt, 60 Hz AC supply. Models rated at 7.2 kW or below at 240 V use a separate 30 A circuit; higher-rated models in the guide use a 40 A circuit. Confirm the exact appliance nameplate rating before sizing or modifying a circuit.
