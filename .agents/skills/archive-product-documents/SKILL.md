@@ -1,6 +1,6 @@
 ---
 name: archive-product-documents
-description: Find, verify, download, name, and record publicly available PDF product manuals and care documents in this repository. Use when adding a purchased or installed product by brand, model, retailer item number, UPC, or similar identifier; recovering missing public PDF documentation; or normalizing an existing product-document entry.
+description: Create minimal product-document archive entries from official product metadata, then later find, verify, download, name, and record publicly available PDF product manuals and care documents in this repository.
 ---
 
 # Archive Product Documents
@@ -10,42 +10,91 @@ Create one flat, self-contained archive entry per product model under
 public. Never add receipts, serial numbers, account data, access codes, private
 photos, addresses, or user-specific installation details.
 
-## Workflow
+## Two-stage workflow
 
-1. Inspect the repository instructions and existing entries before editing.
-2. Identify the product with at least brand and model. Use retailer item numbers,
-   UPCs, and product names as additional match evidence, not as substitutes when
-   a model is available.
-3. Search the web with quoted identifiers. Search the exact model first, then
-   combine it with document terms such as `manual`, `instructions`, `use and
-   care`, `installation`, `service`, and the retailer item number.
-4. Prefer sources in this order:
+### Stage 1: intake from ChatGPT
+
+Use this mode when the user supplies a brand and model and wants the archive
+entry created immediately without downloading PDFs.
+
+1. Identify the product with at least brand and model.
+2. Find an official manufacturer product page.
+3. Determine these values from official sources:
+   - brand;
+   - manufacturer;
+   - model;
+   - product name;
+   - product page URL.
+4. Invoke the authoritative skeleton renderer:
+
+```bash
+python3 .agents/skills/archive-product-documents/scripts/create_pending_entry.py \
+  --brand '<brand>' \
+  --manufacturer '<manufacturer>' \
+  --model '<model>' \
+  --name '<product name>' \
+  --product-page '<official product page URL>'
+```
+
+5. Commit the generated `README.md` and `item.toml`.
+
+The renderer is the only authority for creating initial archive files. Do not
+construct `item.toml` or `README.md` manually in the skill.
+
+During intake:
+
+- do not download PDFs;
+- do not compute hashes, file sizes, page counts, or document filenames;
+- do not add placeholder `[[documents]]` tables;
+- omit unknown optional metadata rather than guessing.
+
+An entry without `[[documents]]` is intentionally incomplete and may fail the
+full archive validator until Stage 2 is complete.
+
+### Stage 2: completion with Codex
+
+Use this mode when asked to complete pending product-document archives.
+
+1. Run:
+
+```bash
+python3 .agents/skills/archive-product-documents/scripts/complete_pending_entry.py
+```
+
+The script reports every `docs/items/*/item.toml` that lacks a non-empty
+`[[documents]]` array. A specific entry may also be passed directly.
+
+2. For each reported entry, search the web with quoted identifiers. Search the
+   exact model first, then combine it with terms such as `manual`,
+   `instructions`, `use and care`, `installation`, `service`, and retailer item
+   numbers when available.
+3. Prefer sources in this order:
    - manufacturer or brand website;
    - retailer product or support website;
    - reputable public manual archive or mirror.
-5. Open each candidate and verify the document itself contains the expected
+4. Open each candidate and verify the document itself contains the expected
    brand/model or another strong combination of identifiers. Do not rely only on
    a search-result title. Reject near matches and undocumented model families.
-6. Compare candidates with documents already archived for the model. Treat files
+5. Compare candidates with documents already archived for the model. Treat files
    as equivalent when their identifiers, title, sections, page count, and text
    match, even if optimization changes the file hash. Keep one copy, preferring
    manufacturer sources, then retailer originals, then mirrors. Replace a
    lower-authority or lower-quality copy and update its existing metadata record;
    do not add a duplicate document entry.
-7. Preserve a combined document as one file. Do not split, merge, convert, or
+6. Preserve a combined document as one file. Do not split, merge, convert, or
    relabel documents in ways that imply content the source does not contain.
-8. Download verified PDFs with `scripts/download_pdf.py`. Record the public asset
+7. Download verified PDFs with `scripts/download_pdf.py`. Record the public asset
    URL, publishing page, retrieval date, source type, SHA-256 digest, file size,
    title, document type, and languages in `item.toml`.
    - If an otherwise public source blocks automated retrieval, report the exact
      URL and normalized target filename. Ask the user to download it manually,
      then verify and archive that local file. Do not bypass access controls or
      replace the document with an unofficial reconstruction.
-9. Create or update `README.md` as a concise human-readable record linking every
-   local document and its public source.
-10. Run `scripts/validate_entry.py` on the entry. Resolve every error before
-    finishing. Report documents that could not be found; never fabricate
-    placeholders.
+8. Update `README.md` as a concise human-readable record linking every local
+   document and its public source.
+9. Run `scripts/validate_entry.py` on the completed entry. Resolve every error
+   before finishing. Report documents that could not be found; never fabricate
+   placeholders.
 
 ## Entry Layout
 
@@ -96,12 +145,14 @@ invent a document version.
 
 ## Metadata
 
-Write `item.toml` as the authoritative structured record. Require
-`schema_version`, `name`, `brand`, `model`, and at least one `documents` entry.
-Optional product fields are `manufacturer`, `item_numbers`, `upcs`, `product_url`,
-and `support_url`. Omit unknown optional values rather than guessing.
+Write `item.toml` as the authoritative structured record. A completed entry
+requires `schema_version`, `name`, `brand`, `model`, and at least one `documents`
+entry. A Stage 1 intake entry intentionally omits `documents` until Codex
+completes it. Optional product fields are `manufacturer`, `item_numbers`, `upcs`,
+`product_url`, and `support_url`. Omit unknown optional values rather than
+guessing.
 
-Require each document to contain `title`, `type`, `file`, `languages`,
+Require each completed document to contain `title`, `type`, `file`, `languages`,
 `source_url`, `source_type`, `retrieved`, `sha256`, and `bytes`. Optional document
 fields are `source_page_url`, `source_filename`, `resolved_url`, `revision`, and
 `pages`.
