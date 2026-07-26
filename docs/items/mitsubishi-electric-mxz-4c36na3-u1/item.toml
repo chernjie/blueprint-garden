@@ -1,0 +1,36 @@
+schema_version = 1
+name = "Mitsubishi Electric MXZ-4C36NA3-U1 3-ton multi-zone inverter heat-pump outdoor condenser"
+brand = "Mitsubishi Electric"
+manufacturer = "Mitsubishi Electric Trane HVAC US LLC"
+model = "MXZ-4C36NA3-U1"
+support_url = "https://www.mylinkdrive.com/USA/M_Series/R410A_Systems-2/R410A_Outdoor"
+
+# Archive status: source URLs and public document identities were recorded on 2026-07-25.
+# PDF binaries still need to be downloaded into documents/ with the archive skill's downloader before this entry is validator-complete.
+
+[[source_documents]]
+title = "Submittal data"
+type = "specification-sheet"
+languages = ['en']
+source_url = "https://www.mylinkdrive.com/viewPdf?srcUrl=http%3A%2F%2Fs3.amazonaws.com%2Fenter.mehvac.com%2FDAMRoot%2FOriginal%2F10006%5CM_SUBMITTAL_MXZ-4C36NA3_en.pdf"
+source_page_url = "https://www.mylinkdrive.com/USA/M_Series/R410A_Systems-2/R410A_Outdoor"
+source_filename = "M_SUBMITTAL_MXZ-4C36NA3_en.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-25
+sha256 = "959343dee7ae7b7cb93c84cb75be8aa47094532a1df62a8568d9ba5562b50dae"
+bytes = 1019922
+pages = 5
+
+[[source_documents]]
+title = "Service manual, MXZ-C NA/NAHZ series"
+type = "service-manual"
+languages = ['en']
+source_url = "https://www.mylinkdrive.com/viewPdf?srcUrl=http%3A%2F%2Fs3.amazonaws.com%2Fenter.mehvac.com%2FDAMRoot%2FOriginal%2F10006%5CM_MXZ-NA4_SERVICE_.pdf"
+source_page_url = "https://www.mylinkdrive.com/USA/M_Series/R410A_Systems-2/R410A_Outdoor"
+source_filename = "M_MXZ-NA4_SERVICE_.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-25
+sha256 = "e98a36b1493a35bbaab29b90a82053774c37f5c152926520d9bba3eb595ccc72"
+bytes = 19532468
+pages = 156
+
