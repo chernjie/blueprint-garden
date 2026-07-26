@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
+
+
+ENTRY_SLUG_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
 
 def parse_args() -> argparse.Namespace:
@@ -34,9 +38,20 @@ def slugify(value: str) -> str:
     return value.strip("-")
 
 
+def validate_slug(slug: str) -> None:
+    if not ENTRY_SLUG_PATTERN.fullmatch(slug):
+        raise ValueError("entry slug must be lowercase ASCII kebab-case")
+
+
 def toml_string(value: str) -> str:
-    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{escaped}"'
+    """Encode a Python string as a TOML basic string.
+
+    JSON string escaping is compatible with TOML basic strings for the escapes
+    emitted by json.dumps, including quotes, backslashes, newlines, tabs, and
+    other control characters.
+    """
+
+    return json.dumps(value, ensure_ascii=False)
 
 
 def render_item_toml(
@@ -72,10 +87,12 @@ def render_readme(
 
 def create_entry(args: argparse.Namespace) -> Path:
     slug = args.slug or slugify(f"{args.brand}-{args.model}")
-    if not slug:
-        raise ValueError("entry slug is empty")
+    validate_slug(slug)
 
-    entry = args.items_root / slug
+    items_root = args.items_root.resolve()
+    entry = (items_root / slug).resolve()
+    if entry.parent != items_root:
+        raise ValueError("entry path must be directly inside items root")
     if entry.exists():
         raise FileExistsError(f"entry already exists: {entry}")
 
