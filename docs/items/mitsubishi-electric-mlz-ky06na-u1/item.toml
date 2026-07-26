@@ -1,0 +1,49 @@
+schema_version = 1
+name = "Mitsubishi Electric MLZ-KY06NA-U1 6,000 BTU one-way recessed ceiling cassette indoor unit"
+brand = "Mitsubishi Electric"
+manufacturer = "Mitsubishi Electric Trane HVAC US LLC"
+model = "MLZ-KY06NA-U1"
+support_url = "https://mylinkdrive.com/USA/M_Series/R410A_Systems-3/One_Way_Ceiling_cassette"
+
+# Archive status: source URLs and public document identities were recorded on 2026-07-25.
+# PDF binaries still need to be downloaded into documents/ with the archive skill's downloader before this entry is validator-complete.
+
+[[source_documents]]
+title = "Submittal data, MLZ-KY06NA-U1 for MXZ systems"
+type = "specification-sheet"
+languages = ['en']
+source_url = "https://www.mitsubishitechinfo.ca/sites/default/files/SB_MLZ-KY06NA-U1_For_MXZ_SYS_202209.pdf"
+source_page_url = "https://mylinkdrive.com/USA/M_Series/R410A_Systems-3/One_Way_Ceiling_cassette"
+source_filename = "SB_MLZ-KY06NA-U1_For_MXZ_SYS_202209.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-25
+sha256 = "6294bd319717b6f9b594c09246d010e59d396bbf54b23036b2085427d72028fd"
+bytes = 730111
+pages = 2
+
+[[source_documents]]
+title = "Installation manual, MLZ-KY06NA"
+type = "installation-instructions"
+languages = ['en', 'es', 'fr']
+source_url = "https://meus1.mylinkdrive.com/viewPdf?srcUrl=http%3A%2F%2Fs3.amazonaws.com%2Fenter.mehvac.com%2FDAMRoot%2FOriginal%2F10006%5CMLZ-KY-NA_Install_DG79V317H01.pdf"
+source_page_url = "https://mylinkdrive.com/USA/M_Series/R410A_Systems-3/One_Way_Ceiling_cassette"
+source_filename = "MLZ-KY-NA_Install_DG79V317H01.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-25
+sha256 = "ab0250316253fc4b480fc72d49efc568d722f830478ba3a2eb8c7382e168d565"
+bytes = 3402963
+pages = 32
+
+[[source_documents]]
+title = "Service manual, MLZ-KY06NA-U1"
+type = "service-manual"
+languages = ['en']
+source_url = "https://www.mitsubishitechinfo.ca/sites/default/files/SH_MLZ-KY06NA_OBH922A.pdf"
+source_page_url = "https://mylinkdrive.com/USA/M_Series/R410A_Systems-3/One_Way_Ceiling_cassette"
+source_filename = "SH_MLZ-KY06NA_OBH922A.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-25
+sha256 = "1956dad0a5f12aa14911ac70fb74a298503fe506be34f32ba1b955ff9f55bcd5"
+bytes = 6422925
+pages = 40
+

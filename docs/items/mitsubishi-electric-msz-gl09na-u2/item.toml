@@ -1,0 +1,33 @@
+schema_version = 1
+name = "Mitsubishi Electric MSZ-GL09NA-U2 9,000 BTU wall-mounted indoor heat-pump unit"
+brand = "Mitsubishi Electric"
+manufacturer = "Mitsubishi Electric Trane HVAC US LLC"
+model = "MSZ-GL09NA-U2"
+support_url = "https://www.mylinkdrive.com/USA/M_Series/R410A_Systems-3/Wall_Mounted-7"
+
+# Archive status: source URLs and public document identities were recorded on 2026-07-25.
+# PDF binaries still need to be downloaded into documents/ with the archive skill's downloader before this entry is validator-complete.
+
+[[source_documents]]
+title = "Submittal data, MSZ-GL09NA for multi-zone systems"
+type = "specification-sheet"
+languages = ['en']
+source_url = "https://www.mylinkdrive.com/viewPdf?srcUrl=http%3A%2F%2Fs3.amazonaws.com%2Fenter.mehvac.com%2FDAMRoot%2FOriginal%2F10008%5CM_SUBMITTAL_MSZ-GL09NA_FOR_MULTI-ZONE_SYSTEMS-en.pdf"
+source_page_url = "https://www.mylinkdrive.com/USA/M_Series/R410A_Systems-3/Wall_Mounted-7"
+source_filename = "M_SUBMITTAL_MSZ-GL09NA_FOR_MULTI-ZONE_SYSTEMS-en.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-25
+sha256 = "ed1ed2d52a112fd5c8fb062b1045c201cfcea52bc022554708a4fe81b786c60f"
+bytes = 1066022
+pages = 4
+
+[[source_documents]]
+title = "Operating instructions, MSZ/MSY-GL06-15NA family"
+type = "user-manual"
+languages = ['en', 'es', 'fr']
+source_url = "https://s3.amazonaws.com/enter.mehvac.com/DAMRoot/Original/10006/M_MSZ-GL06-15NA_OPERATION_JG79Y190H02_04-20.pdf"
+source_page_url = "https://www.mylinkdrive.com/USA/M_Series/R410A_Systems-3/Wall_Mounted-7"
+source_filename = "M_MSZ-GL06-15NA_OPERATION_JG79Y190H02_04-20.pdf"
+source_type = "manufacturer"
+retrieved = 2026-07-25
+
