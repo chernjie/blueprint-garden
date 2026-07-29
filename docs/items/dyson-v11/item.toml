@@ -1,0 +1,7 @@
+schema_version = 1
+name = "Dyson V11 cordless vacuum"
+brand = "Dyson"
+manufacturer = "Dyson Technology Limited"
+model = "V11"
+product_url = "https://www.dyson.com/vacuum-cleaners/cordless/v11"
+support_url = "https://www.dyson.com/support/vacuum-cleaners/cordless/v11"
