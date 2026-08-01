@@ -18,14 +18,15 @@ name = "Maxsea All Purpose"
 label_alias = "Maxsea AP"
 quantity = 1.0
 unit = "gallon"
-form = "liquid-or-mixed-solution"
+form = "unknown"
 status = "in-stock"
+notes = "Confirm whether quantity refers to product packaging or prepared solution."
 
 [[amendments]]
 id = "maxsea-acid"
 name = "Maxsea Acid"
 quantity = 8.0
-unit = "fluid-ounce"
+unit = "ounce"
 form = "unknown"
 status = "in-stock"
 
@@ -33,7 +34,7 @@ status = "in-stock"
 id = "maxsea-bloom"
 name = "Maxsea Bloom"
 quantity = 8.0
-unit = "fluid-ounce"
+unit = "ounce"
 form = "unknown"
 status = "in-stock"
 
