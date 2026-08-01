@@ -14,13 +14,13 @@ status = "in-stock"
 
 [[amendments]]
 id = "maxsea-all-purpose"
-name = "Maxsea All Purpose"
+name = "Maxsea All Purpose Plant Food"
 label_alias = "Maxsea AP"
-quantity = 1.0
-unit = "gallon"
-form = "unknown"
+quantity = 1.5
+unit = "pound"
+form = "dry-soluble"
 status = "in-stock"
-notes = "Confirm whether quantity refers to product packaging or prepared solution."
+product_url = "https://www.amazon.com/dp/B004XVSWJI"
 
 [[amendments]]
 id = "maxsea-acid"
