@@ -1,0 +1,58 @@
+schema_version = 1
+updated = 2026-08-01
+
+# Inventory only. Application rates and plant compatibility will be added
+# after the product labels and plant requirements are verified.
+
+[[amendments]]
+id = "alaska-fish"
+name = "Alaska Fish"
+quantity = 1.0
+unit = "gallon"
+form = "liquid"
+status = "in-stock"
+
+[[amendments]]
+id = "maxsea-all-purpose"
+name = "Maxsea All Purpose"
+label_alias = "Maxsea AP"
+quantity = 1.0
+unit = "gallon"
+form = "liquid-or-mixed-solution"
+status = "in-stock"
+
+[[amendments]]
+id = "maxsea-acid"
+name = "Maxsea Acid"
+quantity = 8.0
+unit = "fluid-ounce"
+form = "unknown"
+status = "in-stock"
+
+[[amendments]]
+id = "maxsea-bloom"
+name = "Maxsea Bloom"
+quantity = 8.0
+unit = "fluid-ounce"
+form = "unknown"
+status = "in-stock"
+
+[[amendments]]
+id = "acid-mix-4-3-6"
+name = "Acid Mix"
+label_alias = "Acid Mix 436"
+npk_label = "4-3-6"
+quantity = 0.0
+unit = "unknown"
+form = "unknown"
+status = "quantity-needed"
+
+[[amendments]]
+id = "bio-live-5-4-2"
+name = "Bio-Live"
+label_alias = "Bio-Live 542"
+npk_label = "5-4-2"
+quantity = 0.0
+unit = "unknown"
+form = "unknown"
+status = "quantity-needed"
