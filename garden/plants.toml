@@ -1,0 +1,131 @@
+schema_version = 1
+updated = 2026-08-01
+
+# Initial inventory reconstructed from current garden discussions.
+# Locations, cultivars, container sizes, counts, and ownership assignments
+# should be verified during the physical garden walk-through.
+
+[[plants]]
+id = "wasabi"
+name = "Wasabi"
+kind = "edible-perennial"
+status = "active"
+location = "to-verify"
+notes = "Possible permanent placement in the sunroom bathroom or beneath the window HVAC."
+
+[[plants]]
+id = "watercress"
+name = "Watercress"
+kind = "edible-perennial"
+status = "active"
+location = "north-side"
+container = "12x12x6-inch foot basin"
+notes = "Currently thriving."
+
+[[plants]]
+id = "fish-mint"
+name = "Fish mint"
+aliases = ["Houttuynia cordata"]
+kind = "edible-herb"
+status = "active"
+location = "to-verify"
+
+[[plants]]
+id = "mint"
+name = "Mint"
+kind = "edible-herb"
+status = "active"
+location = "to-verify"
+
+[[plants]]
+id = "strawberry"
+name = "Strawberry"
+kind = "edible-fruit"
+status = "active-or-planned"
+location = "to-verify"
+
+[[plants]]
+id = "purple-onion"
+name = "Purple onion"
+aliases = ["red onion"]
+kind = "edible-allium"
+status = "active-or-planned"
+location = "to-verify"
+
+[[plants]]
+id = "chili-pepper"
+name = "Chili pepper"
+kind = "edible-fruiting-annual"
+status = "active"
+location = "to-verify"
+
+[[plants]]
+id = "eggplant"
+name = "Eggplant"
+kind = "edible-fruiting-annual"
+status = "active"
+location = "to-verify"
+notes = "Produces both purple fruit and overmature yellow fruit."
+
+[[plants]]
+id = "avocado"
+name = "Avocado"
+kind = "fruit-tree"
+status = "active"
+location = "to-verify"
+notes = "Young plant; a 27-gallon container has been considered."
+
+[[plants]]
+id = "hibiscus-dwarf"
+name = "Dwarf hibiscus"
+kind = "flowering-shrub"
+status = "active"
+location = "full-sun"
+notes = "Approximately 2 feet tall and more than 3 years old; desired height is about 6 feet."
+
+[[plants]]
+id = "rose-trailing"
+name = "Trailing rose"
+kind = "flowering-shrub"
+status = "active"
+location = "right-side-near-gate"
+notes = "Potentially intended for an arch over the gate."
+
+[[plants]]
+id = "rose-recovery"
+name = "Rose in recovery"
+kind = "flowering-shrub"
+status = "stressed"
+location = "to-verify"
+notes = "Previously described as near death. Confirm whether this is distinct from the trailing rose."
+
+[[plants]]
+id = "calendula"
+name = "Calendula"
+kind = "flowering-herb"
+status = "active-or-planned"
+location = "near-roses-to-verify"
+
+[[plants]]
+id = "flax"
+name = "Flax"
+kind = "flowering-or-fiber-plant"
+status = "active-or-planned"
+location = "to-verify"
+
+[[plants]]
+id = "monstera-deliciosa"
+name = "Monstera deliciosa"
+kind = "houseplant"
+status = "active"
+location = "sunroom-bathroom"
+container = "approximately 6-inch pot"
+notes = "Has survived well for months."
+
+[[plants]]
+id = "bathroom-plant-unidentified"
+name = "Unidentified bathroom plant"
+kind = "houseplant"
+status = "active-unidentified"
+location = "sunroom-bathroom"
+notes = "Thriving for months with limited sunlight; identify from the existing photo."
